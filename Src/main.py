@@ -2,26 +2,21 @@
 from fileDownloadHandler import FileDownloadHandler
 from fileDownloadTracker import DownloadTracker 
 import time 
+from startSorting import startSorting 
 
-downloadsPath = r"C:\Users\OGAGAOGHENE\Downloads"
+
+# Sorting Enabled 
+fileSortingEnabled=True 
+
 
 def main():
     
     print(" Sort-ly ")
     
-    
-    fileDownloadHandler = FileDownloadHandler() 
-    downloadTracker = DownloadTracker() 
-    downloadTracker.initiate(fileDownloadHandler, downloadsPath ) 
-    
-    # program loop 
-    
-    try:
-        while True:
-            
-            time.sleep(1)
-            pass
-    except KeyboardInterrupt:
-        downloadTracker.stop() 
+    if fileSortingEnabled:
+        startSorting() 
+    else:
+        print(" File Sorting disabled ") 
+        return 0 
         
 main()
