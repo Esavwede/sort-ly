@@ -1,22 +1,36 @@
 
-from fileDownloadHandler import FileDownloadHandler
-from fileDownloadTracker import DownloadTracker 
-import time 
+import logging 
+from Application_Monitoring import Application_Monitoring
 from startSorting import startSorting 
 
 
-# Sorting Enabled 
+# Application Monitoring
+Application_Monitoring() 
+
+# Application Logging 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s] %(message)s',
+    handlers=
+    [
+        logging.FileHandler('app.log') 
+    ]
+)
+
+
+# Sorting Enabled or Disable 
 fileSortingEnabled=True 
 
 
-def main():
-    
-    print(" Sort-ly ")
+def main(): 
     
     if fileSortingEnabled:
+        
+        logging.info('File Sorting  Enabled ')
         startSorting() 
+     
     else:
-        print(" File Sorting disabled ") 
+        logging.info('File Sorting Disabled ')
         return 0 
         
 main()
