@@ -1,7 +1,7 @@
 
 import logging 
-from Application_Monitoring import Application_Monitoring
-from startSorting import startSorting 
+from system.Application_Monitoring import Application_Monitoring
+from sorting.startSorting import startSorting 
 
 
 # Application Monitoring

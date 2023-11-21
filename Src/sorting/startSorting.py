@@ -1,6 +1,6 @@
 
-from fileDownloadHandler import FileDownloadHandler
-from fileDownloadTracker import DownloadTracker 
+from sorting.fileDownloadHandler import FileDownloadHandler
+from sorting.fileDownloadTracker import DownloadTracker 
 import time 
 
 downloadsPath = r"C:\Users\OGAGAOGHENE\Downloads"
