@@ -1,6 +1,7 @@
 
-from sorting.fileDownloadHandler import FileDownloadHandler
+from sorting.fileDownloadEventHandler import FileDownloadEventHandler
 from sorting.fileDownloadTracker import DownloadTracker 
+from sorting.downloadManager import DownloadManager
 import time 
 
 downloadsPath = r"C:\Users\OGAGAOGHENE\Downloads"
@@ -10,9 +11,10 @@ def startSorting():
     
     print(" Starting File Sorting ") 
         
-    fileDownloadHandler = FileDownloadHandler() 
+    downloadManager = DownloadManager()
+    fileDownloadEventHandler = FileDownloadEventHandler( downloadManager ) 
     downloadTracker = DownloadTracker() 
-    downloadTracker.initiate(fileDownloadHandler, downloadsPath ) 
+    downloadTracker.initiate(fileDownloadEventHandler, downloadsPath ) 
     
     print(" File Sorting Started ") 
      # Sort loop 
@@ -24,5 +26,3 @@ def startSorting():
         
     except KeyboardInterrupt:
         downloadTracker.stop() 
-        
-        

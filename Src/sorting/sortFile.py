@@ -17,7 +17,7 @@ def sort(filePath):
     print("Sorting File")
     sortConfig = loadSortConfig()
     compressSortedFile = sortConfig['compressSortedFile'] #Boolean 
-    rootFilePath = getRootDir(filePath)
+    fileRootDirectory = determineRootDirectoryForFileType(filePath)
     
     
 sort( audioPath )

@@ -23,14 +23,14 @@ class DownloadTracker():
             
         else: 
             
-            print(" Download tracker launched ")
+            print(" Download tracker started ")
         
-            
             
             
     def stop(self):
             
-        print(" hello ") 
+        print(" Stopping Download Tracker ") 
         self.observer.stop()
         self.observer.join()
+        print(" Download Tracker Stopped ") 
     

@@ -23,7 +23,7 @@ def getFileType( filePath ):
         print('Specified Path does not exist ')
         return 'null'
     
-def getRootDir( filePath ):
+def determineRootDirectoryForFileType( filePath ):
     
     fileType = getFileType( filePath ) 
     fileType = fileType.lower() 
